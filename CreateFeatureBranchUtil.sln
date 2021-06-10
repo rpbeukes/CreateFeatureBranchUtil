@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateFeatureBranchUtil", "CreateFeatureBranchUtil\CreateFeatureBranchUtil.csproj", "{2B40A4F6-C276-434C-BE16-A20AAACCAC22}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B40A4F6-C276-434C-BE16-A20AAACCAC22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B40A4F6-C276-434C-BE16-A20AAACCAC22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B40A4F6-C276-434C-BE16-A20AAACCAC22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B40A4F6-C276-434C-BE16-A20AAACCAC22}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4AE81131-CBB9-4B93-ABDE-A7BA200A22A4}
+	EndGlobalSection
+EndGlobal
