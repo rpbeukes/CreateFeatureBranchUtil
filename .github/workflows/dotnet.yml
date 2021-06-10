@@ -26,7 +26,7 @@ jobs:
       - name: Upload Artifact win-x86
         uses: actions/upload-artifact@v1.0.0
         with:
-          name: win-x86
+          name: CreateFeatureBranchUtil_win-x86
           path: ./win-x86
         
   build-ubuntu:
@@ -46,6 +46,6 @@ jobs:
     - name: Upload Artifact win-x86-self-contained
       uses: actions/upload-artifact@v1.0.0
       with:
-        name: win-x86-self-contained
+        name: CreateFeatureBranchUtil_win-x86-self-contained
         path: ./win-x86-self-contained
     
