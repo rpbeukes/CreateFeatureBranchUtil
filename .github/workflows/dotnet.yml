@@ -48,4 +48,24 @@ jobs:
       with:
         name: CreateFeatureBranchUtil_win-x86-self-contained
         path: ./win-x86-self-contained
+        
+    # create linux-x64-self-contained artifacts
+    - name: Publish self-contained linux-x64 runtime to ./linux-x64-self-contained
+      run: dotnet publish ./src/CreateFeatureBranchUtil/CreateFeatureBranchUtil.csproj --configuration Release --runtime linux-x64 --self-contained --output ./linux-x64-self-contained
     
+    - name: Upload Artifact linux-x64-self-contained
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: CreateFeatureBranchUtil_linux-x64-self-contained
+        path: ./linux-x64-self-contained        
+
+    # create osx-x64-self-contained artifacts
+    - name: Publish self-contained osx-x64 runtime to ./osx-x64-self-contained
+      run: dotnet publish ./src/CreateFeatureBranchUtil/CreateFeatureBranchUtil.csproj --configuration Release --runtime osx-x64 --self-contained --output ./osx-x64-self-contained
+    
+    - name: Upload Artifact osx-x64-self-contained
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: CreateFeatureBranchUtil_osx-x64-self-contained
+        path: ./osx-x64-self-contained        
+
