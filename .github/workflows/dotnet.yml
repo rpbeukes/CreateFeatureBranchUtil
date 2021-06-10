@@ -1,0 +1,51 @@
+name: .NETCore
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+  
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 3.0.100
+
+      - name: Build to ./win-x86
+        run: dotnet build ./src/CreateFeatureBranchUtil/CreateFeatureBranchUtil.csproj --configuration Release --output ./win-x86
+      
+      - name: List ./win-x86
+        run: ls ./win-x86    
+      
+      - name: Upload Artifact win-x86
+        uses: actions/upload-artifact@v1.0.0
+        with:
+          name: CreateFeatureBranchUtil_win-x86
+          path: ./win-x86
+        
+  build-ubuntu:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.0.100
+
+    # create win-x86-self-contained artifacts
+    - name: Publish self-contained win-x86 runtime to ./win-x86-self-contained
+      run: dotnet publish ./src/CreateFeatureBranchUtil/CreateFeatureBranchUtil.csproj --configuration Release --runtime win-x86 --self-contained --output ./win-x86-self-contained
+    
+    - name: Upload Artifact win-x86-self-contained
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: CreateFeatureBranchUtil_win-x86-self-contained
+        path: ./win-x86-self-contained
+    
