@@ -11,12 +11,22 @@ namespace CreateFeatureBranchUtil
         {
             try
             {
+                var fileInfo = new FileInfo(System.Reflection.Assembly.GetExecutingAssembly().Location);
+                string repoPath = fileInfo.DirectoryName;
+
+                if (args.Any())
+                    // override repo parh
+                    repoPath = args[0];
+
+                Console.Write("Repo path:  ");
+                Console.WriteLine(repoPath);
+
                 Console.Write("Branch name? ");
                 var newBranchName = Console.ReadLine();
                 Console.WriteLine(newBranchName);
-                var fileInfo = new FileInfo(System.Reflection.Assembly.GetExecutingAssembly().Location);
-                var currentBranchName = RunGitCommand("branch", "--show-current", fileInfo.DirectoryName);
-                Console.Write("Current branch? ");
+           
+                var currentBranchName = RunGitCommand("branch", "--show-current", repoPath);
+                Console.Write("Current branch: ");
                 Console.WriteLine(currentBranchName);
 
                 if (currentBranchName.Contains("/"))
@@ -26,10 +36,10 @@ namespace CreateFeatureBranchUtil
                     for (int i = 0; i < split.Length - 1; i++)
                         featurePath += split[i];
 
-                    Console.Write("Feature branch path? ");
+                    Console.Write("Feature branch path: ");
                     Console.WriteLine(featurePath);
-                    RunGitCommand("checkout", $"-b {featurePath}/{newBranchName}", fileInfo.DirectoryName);
-                    currentBranchName = RunGitCommand("branch", "--show-current", fileInfo.DirectoryName);
+                    RunGitCommand("checkout", $"-b {featurePath}/{newBranchName}", repoPath);
+                    currentBranchName = RunGitCommand("branch", "--show-current", repoPath);
                     Console.Write("Current branch? ");
                     Console.WriteLine(currentBranchName);
                 }
