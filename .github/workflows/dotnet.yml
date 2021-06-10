@@ -19,7 +19,7 @@ jobs:
         dotnet-version: 3.0.100
         
     - name: Build
-      run: dotnet build ./src/CreateFeatureBranchUtil/CreateFeatureBranchUtil.csproj --configuration Release --runtime win-x86 --output ./win-x86
+      run: dotnet build ./src/CreateFeatureBranchUtil/CreateFeatureBranchUtil.csproj --configuration Release --output ./win-x86
    
     - name: Upload Artifact win-x86
       uses: actions/upload-artifact@v1.0.0
