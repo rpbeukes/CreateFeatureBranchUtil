@@ -19,7 +19,7 @@ jobs:
         dotnet-version: 3.0.100
         
     - name: Build
-      run: dotnet build -c Release
+      run: dotnet build ./src/CreateFeatureBranchUtil/CreateFeatureBranchUtil.csproj --configuration Release
       
     - name: Publish to ./artifacts
       run: dotnet publish ./src/CreateFeatureBranchUtil/CreateFeatureBranchUtil.csproj --configuration Release --runtime win-x86 --output ./artifacts
