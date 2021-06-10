@@ -21,14 +21,14 @@ jobs:
     - name: Build
       run: dotnet build ./src/CreateFeatureBranchUtil/CreateFeatureBranchUtil.csproj --configuration Release
       
-    - name: Publish self-contained win-x86 runtime to ./artifacts
-      run: dotnet publish ./src/CreateFeatureBranchUtil/CreateFeatureBranchUtil.csproj --configuration Release --runtime win-x86 --self-contained --output ./artifacts
+    - name: Publish self-contained win-x86 runtime to ./win-x86-self-contained
+      run: dotnet publish ./src/CreateFeatureBranchUtil/CreateFeatureBranchUtil.csproj --configuration Release --runtime win-x86 --self-contained --output ./win-x86-self-contained
     
     - name: Upload Artifact
       uses: actions/upload-artifact@v1.0.0
       with:
-        name: win-x86
-        path: ./artifacts
+        name: win-x86-self-contained
+        path: ./win-x86-self-contained
     
     # - name: Test
     #  run: dotnet test --no-build --verbosity normal
