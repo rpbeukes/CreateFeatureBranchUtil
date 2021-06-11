@@ -2,7 +2,7 @@
 [![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/rpbeukes/CreateFeatureBranchUtil/CI/github-actions)](https://github.com/rpbeukes/CreateFeatureBranchUtil/actions?query=branch%3Amain+) [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/rpbeukes/CreateFeatureBranchUtil)](https://github.com/rpbeukes/CreateFeatureBranchUtil/pulse/monthly) ![GitHub](https://img.shields.io/github/license/rpbeukes/CreateFeatureBranchUtil) ![GitHub forks](https://img.shields.io/github/forks/rpbeukes/CreateFeatureBranchUtil?style=social)
 
 ## Why?
-Repo structure will ook like this:
+Repo structure will look like this:
 
 ```
 - main
