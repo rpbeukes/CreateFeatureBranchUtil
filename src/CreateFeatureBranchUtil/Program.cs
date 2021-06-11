@@ -15,7 +15,7 @@ namespace CreateFeatureBranchUtil
                 string repoPath = fileInfo.DirectoryName;
 
                 if (args.Any())
-                    // override repo parh
+                    // override repo path
                     repoPath = args[0];
 
                 Console.Write("Repo path:  ");
@@ -47,6 +47,8 @@ namespace CreateFeatureBranchUtil
             catch (Exception ex)
             {
                 Console.WriteLine($"Err: {ex}");
+                Console.WriteLine("Press Enter to continue...");
+                Console.ReadLine();
             }
         }
 
