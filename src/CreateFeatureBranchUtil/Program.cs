@@ -11,17 +11,15 @@ namespace CreateFeatureBranchUtil
         {
             try
             {
-                var fileInfo = new FileInfo(System.Reflection.Assembly.GetExecutingAssembly().Location);
-                string repoPath = fileInfo.DirectoryName;
+                if (!args.Any())
+                    throw new ArgumentException("Missing command line parameter, RepoPath.");
 
-                if (args.Any())
-                    // override repo path
-                    repoPath = args[0];
+                var repoPath = args[0];
 
                 Console.Write("Repo path:  ");
                 Console.WriteLine(repoPath);
 
-                Console.Write("Branch name? ");
+                Console.Write("New Branch name? ");
                 var newBranchName = Console.ReadLine();
                 Console.WriteLine(newBranchName);
            
@@ -40,7 +38,7 @@ namespace CreateFeatureBranchUtil
                     Console.WriteLine(featurePath);
                     RunGitCommand("checkout", $"-b {featurePath}/{newBranchName}", repoPath);
                     currentBranchName = RunGitCommand("branch", "--show-current", repoPath);
-                    Console.Write("Current branch? ");
+                    Console.Write("New branch successfully created: ");
                     Console.WriteLine(currentBranchName);
                 }
             }
@@ -71,11 +69,12 @@ namespace CreateFeatureBranchUtil
                 }
             };
             proc.Start();
+            
             while (!proc.StandardOutput.EndOfStream)
-            {
                 results += $"{proc.StandardOutput.ReadLine()}";
-            }
+            
             proc.WaitForExit();
+
             return results;
         }
     }
