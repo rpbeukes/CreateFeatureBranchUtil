@@ -29,7 +29,7 @@ SourceTree Workflow to create a new branch...
 Would like SourceTree to do all the work, so this small utility tool was created in `dotnetcore` which SourceTree will execute via `Custom Actions`.
 
 ## How to use it
-Download the EXE from the build pipeline (sign-in to github), and add it as a Customer Action in SourceTree.
+Download the EXE from the [build pipeline](https://github.com/rpbeukes/CreateFeatureBranchUtil/actions?query=branch%3Amain+) (sign-in to github), and add it as a Customer Action in SourceTree.
 
 In SourceTree, goto `Tools` > `Options` > `Custom Actions`.
 
