@@ -10,7 +10,7 @@ Repo structure will look like this:
 - feature/newBranch
 ```
 
-In [SourceTree](https://www.sourcetreeapp.com/) it will look like a directory structure which can be collapse/expanded:
+In [SourceTree](https://www.sourcetreeapp.com/) it will look like a directory structure which can be collapsed/expanded:
 ```
 ----main
 +----feature
