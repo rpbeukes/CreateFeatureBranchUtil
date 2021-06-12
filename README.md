@@ -1,5 +1,5 @@
 # Create Feature Branch Util
-[![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/rpbeukes/CreateFeatureBranchUtil/CI/github-actions)](https://github.com/rpbeukes/CreateFeatureBranchUtil/actions?query=branch%3Amain+) [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/rpbeukes/CreateFeatureBranchUtil)](https://github.com/rpbeukes/CreateFeatureBranchUtil/pulse/monthly) ![GitHub](https://img.shields.io/github/license/rpbeukes/CreateFeatureBranchUtil) ![GitHub forks](https://img.shields.io/github/forks/rpbeukes/CreateFeatureBranchUtil?style=social)
+[![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/rpbeukes/CreateFeatureBranchUtil/.NETCore/main)](https://github.com/rpbeukes/CreateFeatureBranchUtil/actions?query=branch%3Amain+) [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/rpbeukes/CreateFeatureBranchUtil)](https://github.com/rpbeukes/CreateFeatureBranchUtil/pulse/monthly) ![GitHub](https://img.shields.io/github/license/rpbeukes/CreateFeatureBranchUtil) ![GitHub forks](https://img.shields.io/github/forks/rpbeukes/CreateFeatureBranchUtil?style=social)
 
 ## Why?
 Repo structure will look like this:
@@ -24,7 +24,7 @@ SourceTree Workflow to create a new branch...
 - then copy the branch structure - 'feature/branchFromMain'
 - click on branch
 - paste copied branch name ('feature/branchFromMain) in the textbox
-- delete main and entre new branch name - 'feature/newBranch'
+- delete 'branchFromMain' and entre new branch name - 'feature/newBranch'
 
 Would like SourceTree to do all the work, so this small utility tool was created in `dotnetcore` which SourceTree will execute via `Custom Actions`.
 
